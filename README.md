@@ -27,7 +27,7 @@ You can run test using maven from command line:
 
 Or run from Ide run TestNG suite:
 
-![img](https://github.com/keryit/SeleniumTest.git/img/runTestNg.png)
+![img](https://github.com/keryit/SeleniumTest/tree/master/img/runTestNg.png)
 
 
 **Reporting and Logging**
@@ -45,7 +45,7 @@ After each step you can see log.info in console something like:
 
 also it creates html report in target/surefire-reports
 
-![img](https://github.com/keryit/SeleniumTest.git/img/report.png)
+![img](https://github.com/keryit/SeleniumTest/tree/master/img/report.png)
 
 
 Snapshots you can find target/surefire-reports/failure_screenshots
