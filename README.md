@@ -20,13 +20,14 @@ Then you can open project using ide.
 
 
 **Running the tests**
+
 You can run test using maven from command line:
 
 >>mvn clean tests
 
-Or from Ide run TestNG suite:
+Or run from Ide run TestNG suite:
 
-
+![img](https://github.com/keryit/SeleniumTest.git/master/img/runTestNg.png)
 
 
 **Reporting and Logging**
@@ -42,9 +43,9 @@ After each step you can see log.info in console something like:
 
 
 
-also it creats html report in target/surefire-reports
+also it creates html report in target/surefire-reports
 
-
+![img](https://github.com/keryit/SeleniumTest.git/master/img/report.png)
 
 
 Snapshots you can find target/surefire-reports/failure_screenshots
