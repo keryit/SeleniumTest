@@ -1,7 +1,8 @@
 # PurchaseTestSelenium
-Test framework Selenium + Maven + ReportNG (searching and purchase workflow)
+Test framework Selenium + Maven project + testNG for creating and running tests + ReportNG for reporting
+                        + DDT model for keeping data for tests(searching and purchase workflow)
 
-**Prerequisites**
+## Prerequisites
 
 You need to install these software to run tests.
 
@@ -10,27 +11,28 @@ You need to install these software to run tests.
     git installed
     Latest Chrome installed
 
-Getting Started
+**Getting Started**
 
 First you need to download the project. And then generate source code from models:
 
 git clone https://github.com/keryit/SeleniumTest.git
 
-Then you can open project using ide.
+Then you can open project using any ide.
 
 
-**Running the tests**
+ ## Running the tests
 
 You can run test using maven from command line:
 
->>mvn clean tests
+>> cd SeleniumTest
+>> mvn clean tests
 
-Or run from Ide run TestNG suite:
+Or from any ide run TestNG suite:
 
 ![img](https://github.com/keryit/SeleniumTest/blob/master/img/runTestNg.png)
 
 
-**Reporting and Logging**
+## Reporting and Logging
 
 After each step you can see log.info in console something like:
 
@@ -43,20 +45,21 @@ After each step you can see log.info in console something like:
 
 
 
-also it creates html report in target/surefire-reports
+also it creates html report in **target/surefire-reports**
 
 ![img](https://github.com/keryit/SeleniumTest/blob/master/img/report.png)
 
 
-Snapshots you can find target/surefire-reports/failure_screenshots
+Snapshots you can find **target/surefire-reports/failure_screenshots**
 
 
-About structure
+ ## About structure
 
 ![img](https://github.com/keryit/SeleniumTest/blob/master/img/structure.png)
 
 
-src/main/java/
+**src/main/java/**
+
 
  **BasePage.class**
   this class contains all common methods - click();, writeText();, selectFromTheList();, wait();, and etc
@@ -76,8 +79,10 @@ src/main/java/
    *ExcelUtil.class*
   reads and writs data to excel file
 
+
   **package pages:**
   contains all classes-pages which needs to testing
+
 
   **src/main/resources/**
 
@@ -87,8 +92,22 @@ src/main/java/
   *testData.xlsx*
   keeps test cases and data for using in test
 
+
   **/src/test/java/**
 
   **package test**
   contains tests
   You can create new test creating new Class or create new test using annotation @Test
+
+  **pom.xml**
+  that contains information about the project and configuration details used by Maven to build the project
+
+  for setup webdriver I use WebDriverManager to manage the WebDriver binaries and keeping the last version, now to setup a browser looks like:
+
+    WebDriverManager.chromedriver().setup();
+    WebDriver driver = new ChromeDriver();
+    //WebDriverManager.firefoxdriver().setup();
+    //WebDriverManager.operadriver().setup();
+
+   No need keeping binary file into your Java source code.
+   The documentation see https://github.com/bonigarcia/webdrivermanager
