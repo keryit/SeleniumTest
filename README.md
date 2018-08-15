@@ -49,3 +49,46 @@ also it creates html report in target/surefire-reports
 
 
 Snapshots you can find target/surefire-reports/failure_screenshots
+
+
+About structure
+
+![img](https://github.com/keryit/SeleniumTest/blob/master/img/structure.png)
+
+
+src/main/java/
+
+ **BasePage.class**
+  this class contains all common methods - click();, writeText();, selectFromTheList();, wait();, and etc
+
+  **utils package:**  
+
+   *Listener.class*
+  contains methods for logging and for taking a screenshot
+  it listens the BasePage.class
+
+  *Constant.class*
+  contains all constants which uses (driver, user directory path, excel name, excel sheet name...) 
+
+  *SetUpUtil.class*
+  Just setup @BeforeClass- setup browser driver and @AfterClass quit from browser and delete cookies
+
+   *ExcelUtil.class*
+  reads and writs data to excel file
+
+  **package pages:**
+  contains all classes-pages which needs to testing
+
+  **src/main/resources/**
+
+  *log4j.properties*
+  creates and writes logs
+
+  *testData.xlsx*
+  keeps test cases and data for using in test
+
+  **/src/test/java/**
+
+  **package test**
+  contains tests
+  You can create new test creating new Class or create new test using annotation @Test
