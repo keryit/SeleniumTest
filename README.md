@@ -44,9 +44,9 @@ Or from any ide run TestNG suite:
 
    SearchTest.class (/src/test/java/test)
 
-   Test using "for loop" to get all values from excel and trying to search
+   Test using "for loop"  gets all values from excel and trying to search
 
-   Also test get from excel expected result and compare with actual result which get from the web pages
+   Also test gets from excel expected result and compare with actual result which gets from the web pages
 
    Than writes actual result to Excel
 
