@@ -24,8 +24,8 @@ Then you can open project using any ide.
 
 You can run test using maven from command line:
 
->> cd SeleniumTest
->> mvn clean tests
+   cd SeleniumTest
+   mvn clean tests
 
 Or from any ide run TestNG suite:
 
@@ -45,7 +45,7 @@ After each step you can see log.info in console something like:
 
 
 
-also it creates html report in **target/surefire-reports**
+also it creates html report in **{user_dir}/test-output**
 
 ![img](https://github.com/keryit/SeleniumTest/blob/master/img/report.png)
 
