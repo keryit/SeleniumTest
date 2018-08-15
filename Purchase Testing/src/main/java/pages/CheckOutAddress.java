@@ -11,6 +11,8 @@ public class CheckOutAddress extends BasePage {
     }
 
     private By addressList = By.id("id_address_delivery");
+    private By addressDeliveryBox = By.id("address_delivery");
+    private By addressBillingBox = By.id("address_invoice");
     private By idCheckBox = By.id("addressesAreEquals");
     private By updateDeliveryBtn = By.xpath("//*[@id=\"address_delivery\"]/li[8]/a/span");
     private By updateBillingBtn = By.xpath("//*[@id=\"address_invoice\"]/li[8]/a/span");
@@ -50,6 +52,14 @@ public class CheckOutAddress extends BasePage {
 
     public void clickContinueShop() {
         click(continueShoppingBtn);
+    }
+
+    public WebElement getAddressDeliveryBox(){
+        return waitForVisibleElement(driver, addressDeliveryBox, 30);
+    }
+
+    public WebElement getBillingAddressBox(){
+        return waitForVisibleElement(driver, addressBillingBox,30);
     }
 
     public WebElement getUseDeliveryAddressCheckBox() {

@@ -44,6 +44,12 @@ class SearchTest extends SetUpUtil {
                 Assert.assertEquals(searchHelper.getMessageAfterWrongKeyword(), ExcelUtil.getCellData(count, 3));
                 ExcelUtil.setCellData(searchHelper.getMessageAfterWrongKeyword(), count, 4);
 
+                if (searchHelper.getMessageAfterWrongKeyword().equals(ExcelUtil.getCellData(count, 3))){
+                    ExcelUtil.setCellData("PASSED", count, 5);
+                }
+                else
+                    ExcelUtil.setCellData("FAILED", count, 5);
+
 
             }
             finput.close();
@@ -56,7 +62,7 @@ class SearchTest extends SetUpUtil {
 
     @Test(priority = 0, description = "Search failed")
 
-    public void searchExistingValue() {
+    public void searchExistingValue() throws Exception {
 
         SearchHelper searchHelper = new SearchHelper(driver, wait);
 
@@ -64,10 +70,19 @@ class SearchTest extends SetUpUtil {
 
         searchHelper.searchByKeyword(ExcelUtil.getCellData(1, 2));
         System.out.println("Number of found goods is: " + searchHelper.getCountAllArticles());
-        System.out.println(searchHelper.getMessageArticleFound());
-        Assert.assertTrue(searchHelper.getMessageArticleFound().contains(searchHelper.getCountAllArticles().toString()));
-        Assert.assertEquals("123", "222");
+        System.out.println("Message from the site--" + searchHelper.getMessageArticleFound());
+        ExcelUtil.setCellData(searchHelper.getMessageArticleFound(), 1,4);
+        //Assert.assertTrue(searchHelper.getMessageArticleFound().contains(searchHelper.getCountAllArticles().toString()));
+
+        if (searchHelper.getMessageArticleFound().contains(searchHelper.getCountAllArticles().toString())){
+            ExcelUtil.setCellData("PASSED", 1, 5);
+        }
+        else
+            ExcelUtil.setCellData("FAILED", 1,5);
+
+        }
+
 
 
     }
-}
+

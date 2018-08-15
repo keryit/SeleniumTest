@@ -66,6 +66,11 @@ public class CreateAccountForm extends BasePage {
         return waitForVisibleElement(driver, custEmailField , 30);
     }
 
+    public String getEmailFromField(){
+        return waitForVisibleElement(driver, custEmailField,30).getAttribute("value");
+
+    }
+
     public WebElement getCustomerPasswordField() {
         return waitForVisibleElement(driver, custPassField , 30);
     }

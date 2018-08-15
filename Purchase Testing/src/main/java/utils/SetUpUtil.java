@@ -26,8 +26,8 @@ public class SetUpUtil {
 
     @AfterClass
     public void tearDown() {
-        driver.manage().deleteAllCookies();
-        driver.quit();
+      //  driver.manage().deleteAllCookies();
+      //  driver.quit();
 
     }
 

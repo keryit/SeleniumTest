@@ -111,3 +111,27 @@ Snapshots you can find **target/surefire-reports/failure_screenshots**
 
    No need keeping binary file into your Java source code.
    The documentation see https://github.com/bonigarcia/webdrivermanager
+
+
+   **How to create Tests**
+
+   You can change data in excel file
+   Excel with data contains data just for 3 tests (located in /src/mai/resources/testData.xml
+
+   1. Searching with wrong parameters
+   excel sheet "SearchNegativeValue"
+   SearchTest.class (/src/test/java/test)
+
+   Test using "for loop" to get all values from excel and trying to search
+   Also test get from excel expected result and compare with actual result which get from the web pages
+   Than writes actual result to Excel
+   If test case passed it writes status to the EXCEL as "PASSED" and "FAILED" if test failed
+
+   2.Searching with correct value and verify returned dresses
+   excel sheet "SearchPositiveValue"
+
+   2. Select a product, add to cart and buy as new User
+   excel sheet "BuyAsNewUser"
+   contains all info about user and some expected result such as name, price, address
+
+

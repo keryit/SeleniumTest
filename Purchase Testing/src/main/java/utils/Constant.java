@@ -14,7 +14,7 @@ public class Constant {
             File.separator + "resources";
     public static final String exelSheetSearchNegative = "SearchNegativeValue";
     public static final String excelSheetSearchPositive = "SearchPositiveValue";
-    public static final String excelSheetNameSetUserInfo = "SetUserInfoValue";
+    public static final String excelSheetNameSetUserInfo = "BuyAsNewUser";
     public static WebDriver driver;
     public static WebDriverWait wait;
 

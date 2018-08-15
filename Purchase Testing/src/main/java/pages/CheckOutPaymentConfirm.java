@@ -12,6 +12,9 @@ public class CheckOutPaymentConfirm extends BasePage {
 
     private By confirmOrder = By.xpath("//*[@id=\"cart_navigation\"]/button//span[contains(text(), \"I confirm my order\")]");
     private By otherPaymentMethods = By.xpath("//*[@id=\"cart_navigation\"]/a[contains(text(), \"Other payment methods\")]");
+    private By shortSummaryOrder = By.id("amount");
+    private By orderAfterConfirm = By.xpath("//div[contains(@class,'box')]");
+    private By backToOrders = By.xpath("//*[@id=\"center_column\"]/p/a");
 
 
     public WebElement getConfirmOrderBtn() {
@@ -22,12 +25,23 @@ public class CheckOutPaymentConfirm extends BasePage {
         return waitForClickable(driver, otherPaymentMethods, 30);
     }
 
+    public WebElement getShortSummaryOrderMsgBox(){
+        return waitForVisibleElement(driver, shortSummaryOrder,30);
+    }
+    public WebElement getAfterConfirmMsgBox(){
+        return waitForVisibleElement(driver,orderAfterConfirm,30);
+    }
+
     public void clickConfirmOrderBtn() {
-        clear(confirmOrder);
+        click(confirmOrder);
     }
 
     public void clickOtherPaymentMethods() {
-        clear(otherPaymentMethods);
+        click(otherPaymentMethods);
+    }
+
+    public void clickBackToOrders(){
+        click(backToOrders);
     }
 
 

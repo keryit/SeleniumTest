@@ -12,6 +12,7 @@ public class CheckOutPayment extends BasePage {
 
     private By payByBankWire = By.xpath("//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a");
     private By payByCheck = By.xpath("//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a");
+    private By totalPrice = By.id("total_price_container");
     private By continueShoppingBtn = By.xpath("//*[@id=\"center_column\"]/div/p/a[contains(text(), \"Continue shopping\")]");
 
 
@@ -27,6 +28,9 @@ public class CheckOutPayment extends BasePage {
         return waitForClickable(driver, continueShoppingBtn, 30);
     }
 
+    public WebElement getTotalPrice(){
+        return waitForVisibleElement(driver,totalPrice,30);
+    }
     public void clickPayByBank() {
         click(payByBankWire);
     }

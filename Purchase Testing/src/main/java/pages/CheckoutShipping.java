@@ -10,7 +10,7 @@ public class CheckoutShipping extends BasePage {
         super(driver, wait);
     }
 
-    private By termsCheckBox = By.id("cgv");
+    private By termsCheckBox = By.id("uniform-cgv");
     private By proceedBtn = By.xpath("//*[@id=\"form\"]/p/button//span[contains(text(), \"Proceed to checkout\")]");
     private By continueShoppingBtn = By.xpath("//*[@id=\"form\"]/p/a//span[contains(text(), \"Continue shopping\")]");
 
